@@ -14,7 +14,6 @@ package me.jurikolo;
 
 public class TwoSum {
     public static int[] twoSum(int[] nums, int target) {
-        int[] result = new int[2];
         int num1;
         int num2;
         int cnt1 = 0;
@@ -28,9 +27,7 @@ public class TwoSum {
                 } else {
                     num2 = nums[cnt2];
                     if (num1 + num2 == target) {
-                        result[0] = cnt1;
-                        result[1] = cnt2;
-                        return result;
+                        return new int[] {cnt1, cnt2};
                     }
                     cnt2++;
                 }
@@ -38,7 +35,6 @@ public class TwoSum {
             }
             cnt1++;
         }
-        System.out.println("None two values sum equals target");
-        return result;
+        throw new IllegalArgumentException("No two sum solution");
     }
 }

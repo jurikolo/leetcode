@@ -52,8 +52,8 @@ public class TwoSumTest {
         testArray[1] = 7;
         testArray[2] = 11;
         testArray[3] = 15;
-        result = TwoSum.twoSum(testArray, 100500);
-        Assertions.assertEquals(result[0], 0);
-        Assertions.assertEquals(result[1], 0);
+        Assertions.assertThrows(IllegalArgumentException.class, () -> {
+            TwoSum.twoSum(testArray, 100500);
+        });
     }
 }
