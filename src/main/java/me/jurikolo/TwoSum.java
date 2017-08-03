@@ -28,8 +28,8 @@ public class TwoSum {
                 } else {
                     num2 = nums[cnt2];
                     if (num1 + num2 == target) {
-                        result[0] = num1;
-                        result[1] = num2;
+                        result[0] = cnt1;
+                        result[1] = cnt2;
                         return result;
                     }
                     cnt2++;
