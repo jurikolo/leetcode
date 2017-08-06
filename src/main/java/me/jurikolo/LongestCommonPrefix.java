@@ -1,5 +1,10 @@
 package me.jurikolo;
 
+/*
+ * https://leetcode.com/problems/longest-common-prefix/description
+ * Write a function to find the longest common prefix string amongst an array of strings.
+ */
+
 public class LongestCommonPrefix {
     public static String longestCommonPrefix(String[] strs) {
         if (strs.length == 1) {
