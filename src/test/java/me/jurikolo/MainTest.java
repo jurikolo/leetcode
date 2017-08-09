@@ -1,4 +1,4 @@
 package me.jurikolo;
 
-public class Main {
+public class MainTest {
 }

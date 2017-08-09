@@ -2,6 +2,8 @@ package me.jurikolo;
 
 import me.jurikolo.extra.ListNode;
 
+import java.math.BigInteger;
+
 /*
  * https://leetcode.com/problems/add-two-numbers/description
  * You are given two non-empty linked lists representing two non-negative integers.
@@ -18,6 +20,31 @@ import me.jurikolo.extra.ListNode;
 
 public class AddTwoNumbers {
     public ListNode addTwoNumbers(ListNode l1, ListNode l2) {
-        return l1;
+        BigInteger result = BigInteger.valueOf(0);
+        int pow = 0;
+        while ((l1 != null) || (l2 != null)) {
+            if ((l1 != null) && (l2 != null)) {
+                result = result.add(BigInteger.valueOf((l1.val + l2.val)).multiply(BigInteger.valueOf(10).pow(pow)));
+                l1 = l1.next;
+                l2 = l2.next;
+            } else if (l1 != null) {
+                result = result.add(BigInteger.valueOf((l1.val)).multiply(BigInteger.valueOf(10).pow(pow)));
+                l1 = l1.next;
+            } else {
+                result = result.add(BigInteger.valueOf((l2.val)).multiply(BigInteger.valueOf(10).pow(pow)));
+                l2 = l2.next;
+            }
+            pow++;
+        }
+
+        ListNode lastNode = new ListNode(0);
+        ListNode resultList = lastNode;
+        lastNode.val = result.remainder(BigInteger.valueOf(10)).intValue();
+        while(result.compareTo(BigInteger.valueOf(9)) > 0) {
+            result = result.divide(BigInteger.valueOf(10));
+            lastNode.next = new ListNode(result.remainder(BigInteger.valueOf(10)).intValue());
+            lastNode = lastNode.next;
+        }
+        return resultList;
     }
 }

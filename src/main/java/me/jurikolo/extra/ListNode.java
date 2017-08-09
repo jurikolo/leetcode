@@ -1,10 +1,14 @@
 package me.jurikolo.extra;
 
-public class ListNode {
-    int val;
-    ListNode next;
+/*
+ * Definition for singly-linked list.
+ */
 
-    ListNode(int x) {
+public class ListNode {
+    public int val;
+    public ListNode next;
+
+    public ListNode(int x) {
         val = x;
     }
 }
