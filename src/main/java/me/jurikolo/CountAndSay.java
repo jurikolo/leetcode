@@ -20,13 +20,16 @@ package me.jurikolo;
 public class CountAndSay {
     public String countAndSay(int n) {
         String result = "1";
+        String tmpStr;
+        boolean iterate;
+        String currentChar;
         while(n > 1) {
-            String tmpStr = result;
+            tmpStr = result;
             result = "";
-            boolean iterate = true;
+            iterate = true;
             while(iterate) {
                 int cnt = 1;
-                String currentChar = tmpStr.substring(0, 1);
+                currentChar = tmpStr.substring(0, 1);
                 while ((cnt < tmpStr.length()) && (tmpStr.substring(cnt, cnt + 1).equalsIgnoreCase(currentChar))) {
                     cnt++;
                 }
