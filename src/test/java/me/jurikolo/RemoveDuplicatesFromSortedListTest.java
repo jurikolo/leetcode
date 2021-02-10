@@ -1,16 +1,16 @@
 package me.jurikolo;
 
 import me.jurikolo.extra.ListNode;
-import org.junit.jupiter.api.Assertions;
-import org.junit.jupiter.api.Test;
+import org.junit.Assert;
+import org.junit.Test;
 
 public class RemoveDuplicatesFromSortedListTest {
     @Test
     public void zero() {
         ListNode l2 = new ListNode(0);
         ListNode result = new RemoveDuplicatesFromSortedList().deleteDuplicates(l2);
-        Assertions.assertEquals(0, result.val);
-        Assertions.assertEquals(null, result.next);
+        Assert.assertEquals(0, result.val);
+        Assert.assertEquals(null, result.next);
     }
 
     @Test
@@ -19,9 +19,9 @@ public class RemoveDuplicatesFromSortedListTest {
         l2.next = new ListNode(1);
         l2.next.next = new ListNode(2);
         ListNode result = new RemoveDuplicatesFromSortedList().deleteDuplicates(l2);
-        Assertions.assertEquals(1, result.val);
-        Assertions.assertEquals(2, result.next.val);
-        Assertions.assertEquals(null, result.next.next);
+        Assert.assertEquals(1, result.val);
+        Assert.assertEquals(2, result.next.val);
+        Assert.assertEquals(null, result.next.next);
     }
 
     @Test
@@ -32,10 +32,10 @@ public class RemoveDuplicatesFromSortedListTest {
         l2.next.next.next = new ListNode(3);
         l2.next.next.next.next = new ListNode(3);
         ListNode result = new RemoveDuplicatesFromSortedList().deleteDuplicates(l2);
-        Assertions.assertEquals(1, result.val);
-        Assertions.assertEquals(2, result.next.val);
-        Assertions.assertEquals(3, result.next.next.val);
-        Assertions.assertEquals(null, result.next.next.next);
+        Assert.assertEquals(1, result.val);
+        Assert.assertEquals(2, result.next.val);
+        Assert.assertEquals(3, result.next.next.val);
+        Assert.assertEquals(null, result.next.next.next);
     }
 
     @Test
@@ -44,7 +44,7 @@ public class RemoveDuplicatesFromSortedListTest {
         l2.next = new ListNode(1);
         l2.next.next = new ListNode(1);
         ListNode result = new RemoveDuplicatesFromSortedList().deleteDuplicates(l2);
-        Assertions.assertEquals(1, result.val);
-        Assertions.assertEquals(null, result.next);
+        Assert.assertEquals(1, result.val);
+        Assert.assertEquals(null, result.next);
     }
 }

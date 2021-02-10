@@ -1,8 +1,8 @@
 package me.jurikolo;
 
 import me.jurikolo.extra.ListNode;
-import org.junit.jupiter.api.Assertions;
-import org.junit.jupiter.api.Test;
+import org.junit.Assert;
+import org.junit.Test;
 
 public class MergeTwoSortedListsTest {
     @Test
@@ -10,8 +10,8 @@ public class MergeTwoSortedListsTest {
         ListNode l1 = new ListNode(0);
         ListNode l2 = new ListNode(0);
         ListNode result = new MergeTwoSortedLists().mergeTwoLists(l1, l2);
-        Assertions.assertEquals(0, result.val);
-        Assertions.assertEquals(0, result.next.val);
+        Assert.assertEquals(0, result.val);
+        Assert.assertEquals(0, result.next.val);
     }
 
     @Test
@@ -20,9 +20,9 @@ public class MergeTwoSortedListsTest {
         ListNode l2 = new ListNode(1);
         l2.next = new ListNode(3);
         ListNode result = new MergeTwoSortedLists().mergeTwoLists(l1, l2);
-        Assertions.assertEquals(1, result.val);
-        Assertions.assertEquals(2, result.next.val);
-        Assertions.assertEquals(3, result.next.next.val);
+        Assert.assertEquals(1, result.val);
+        Assert.assertEquals(2, result.next.val);
+        Assert.assertEquals(3, result.next.next.val);
     }
 
     @Test
@@ -30,7 +30,7 @@ public class MergeTwoSortedListsTest {
         ListNode l1 = null;
         ListNode l2 = null;
         ListNode result = new MergeTwoSortedLists().mergeTwoLists(l1, l2);
-        Assertions.assertEquals(null, result);
+        Assert.assertEquals(null, result);
     }
 
     @Test
@@ -38,7 +38,7 @@ public class MergeTwoSortedListsTest {
         ListNode l1 = null;
         ListNode l2 = new ListNode(0);
         ListNode result = new MergeTwoSortedLists().mergeTwoLists(l1, l2);
-        Assertions.assertEquals(0, result.val);
-        Assertions.assertEquals(null, result.next);
+        Assert.assertEquals(0, result.val);
+        Assert.assertEquals(null, result.next);
     }
 }

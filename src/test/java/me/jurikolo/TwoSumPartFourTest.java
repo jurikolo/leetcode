@@ -1,8 +1,8 @@
 package me.jurikolo;
 
 import me.jurikolo.extra.TreeNode;
-import org.junit.jupiter.api.Assertions;
-import org.junit.jupiter.api.Test;
+import org.junit.Assert;
+import org.junit.Test;
 
 public class TwoSumPartFourTest {
     @Test
@@ -13,19 +13,19 @@ public class TwoSumPartFourTest {
         root.left.right = new TreeNode(4);
         root.right = new TreeNode(6);
         root.right.right = new TreeNode(7);
-        Assertions.assertTrue(new TwoSumPartFour().findTarget(root, 9));
-        Assertions.assertFalse(new TwoSumPartFour().findTarget(root, 28));
+        Assert.assertTrue(new TwoSumPartFour().findTarget(root, 9));
+        Assert.assertFalse(new TwoSumPartFour().findTarget(root, 28));
     }
 
     @Test
     public void empty() {
         TreeNode root = null;
-        Assertions.assertFalse(new TwoSumPartFour().findTarget(root, 100500));
+        Assert.assertFalse(new TwoSumPartFour().findTarget(root, 100500));
     }
 
     @Test
     public void one() {
         TreeNode root = new TreeNode(1);
-        Assertions.assertFalse(new TwoSumPartFour().findTarget(root, 1));
+        Assert.assertFalse(new TwoSumPartFour().findTarget(root, 1));
     }
 }
